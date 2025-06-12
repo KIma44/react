@@ -9,7 +9,6 @@ export const container = css`
     height: 40px;
     overflow: hidden;
 `;
-
 export const searchInput = css`
     flex-grow: 1;
     border: none;
@@ -25,12 +24,10 @@ export const searchButton = css`
     font-size: 18px;
     cursor: pointer;
 `;
-
 export const fillterContainer = css`
     display: flex;
     justify-content: end;
     box-sizing: border-box;
     width: 100%;
     padding: 5px 10px;
-
 `;
