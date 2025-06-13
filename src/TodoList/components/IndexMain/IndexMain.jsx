@@ -10,6 +10,7 @@ function IndexMain({todoList, setTodoList}) {
     const handleOnChange = (e) => {
         setInputValue(e.target.value);
     }
+    
     const handleOnKeyDown = (e) => {
         if (e.keyCode !== 13) {
             return;
@@ -51,6 +52,7 @@ function IndexMain({todoList, setTodoList}) {
    const handleDeleteOnClick = (todoId) => {
         setTodoList(prev => prev.filter(todo => todo.id !== todoId));
   }
+  
     return (
         <div css={s.container}>
             <div  css={s.listContainer}>
@@ -70,7 +72,6 @@ function IndexMain({todoList, setTodoList}) {
                         </li>
                     ))
                 }
-                
             </ul>
             </div>
             <div css={s.todoInputContainer}>
