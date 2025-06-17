@@ -18,6 +18,7 @@ import Index from './TodoList/pages/Index'
 import Router2 from './RouterStudy/Router2/Router2'
 import Router3 from './RouterStudy/Router3/Router3'
 import Router4 from './RouterStudy/Router4/Router4'
+import MainRouter from './RouterStudy/Auth/Routers/MainRouter'
 
 
 
@@ -32,14 +33,15 @@ function App() {
     {/* <InputState4 /> */}
     {/* <DomRef /> */}
     {/* <Effect1 /> */}
-   {/* <Effect2 /> */}
- {/* <Emotion /> 
- <Emotion2 />  */}
- {/* <Index /> */}
- {/* <Router1 /> */}
+     {/* <Effect2 /> */}
+   {/* <Emotion /> 
+    <Emotion2 />  */}
+   {/* <Index /> */}
+  {/* <Router1 /> */} 
 {/* <Router2 /> */}
-<Router3 />
+{/* <Router3 /> */}
 {/* <Router4 /> */}
+<MainRouter />
   </BrowserRouter>
 }
 

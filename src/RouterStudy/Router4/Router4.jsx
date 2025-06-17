@@ -46,7 +46,6 @@ function Router4(props) {
  
     return (
         <div>
-           
             <Routes>
                 <Route path='/param1/:name/:age' element={<Component1 />}/>
                 <Route path='/param2' element={<Component2 />}/>

@@ -38,7 +38,7 @@ function Router2(props) {
             <h1>Router2</h1>
             <Routes>
                 <Route path='/pagestudy/*' element={<Page1 />}/>
-                <Route  path='/pagestudy2/*' element={<Routes>
+                <Route path='/pagestudy2/*' element={<Routes>
                     <Route path='/name1' element={<h1>김준일</h1>} />
                     <Route path='/name2' element={<h1>김준이</h1>} />
                 </Routes>}/>
