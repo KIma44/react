@@ -4,7 +4,7 @@ import Siginup from '../Siginup/Siginup';
 import Signin from '../Signin/Signin';
 import NotFound from '../NotFound/NotFund';
 
-function UnAuthRouter(props) {
+function UnAuthRouter() {
     return (
         
             <Routes>

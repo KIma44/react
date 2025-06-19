@@ -4,7 +4,7 @@ import * as s from './styles';
 import { MdOutlineCheckCircle, MdOutlineErrorOutline } from 'react-icons/md';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 /**
@@ -17,6 +17,7 @@ function useSignInAndUpInput({ id, type, name, placeholder, value, valid,  }) {
         success: "success",
         error: "error",
     };
+    
     const [ inputValue, setInputValue ] = useState(value);
     const [ status, setStatus ] = useState(STATUS.idle);
 

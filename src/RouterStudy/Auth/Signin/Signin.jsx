@@ -4,7 +4,8 @@ import * as s from './styles';
 import { MdOutlineCheckCircle, MdOutlineErrorOutline } from 'react-icons/md';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useRefreshStore } from '../stores/storeStudy';
 
 
 /**
@@ -134,8 +135,10 @@ function InputValidatedMessage({status, message}) {
     return <></>
 }
 
-function Signin(props) {
+function Signin() {
+    const navigate = useNavigate();
     const location = useLocation();
+    const { setValue:setRefresh } = useRefreshStore();
     const [ submitDisabled, setSubmitDisabled ] = useState(true);
     const inputs = [
         {
@@ -196,9 +199,16 @@ function Signin(props) {
         });
         
         try {
-            await axios.post(url, data);
-            alert('로그인 요청 완료');
+            const response = await axios.post(url, data);
+            const accessToken = response.data?.accessToken;
+            if (!!accessToken) {
+                localStorage.setItem("AccessToken", accessToken);
+                setRefresh(prev => true);
+                navigate("/");
+            }
         } catch(error) {
+            const { response,status } = error;
+            console.log(response.data);
             alert('로그인 오류');
         }
     }
