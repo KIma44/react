@@ -19,10 +19,23 @@ import Router2 from './RouterStudy/Router2/Router2'
 import Router3 from './RouterStudy/Router3/Router3'
 import Router4 from './RouterStudy/Router4/Router4'
 import MainRouter from './RouterStudy/Auth/Routers/MainRouter'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import MainRouterReactQuery from './RouterStudy/Auth/Routers/MainRouterReactQuery'
 
 
 
 function App() {
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        // refetchOnWindowFocus: false,
+        staleTime: 1000 * 60, // 1분
+        retry: 0, // 다시하기 0번
+      }
+    }
+  });
+
   return <BrowserRouter>
     {/* <HelloReact /> */}
     {/* <HelloJsx /> */}
@@ -33,15 +46,18 @@ function App() {
     {/* <InputState4 /> */}
     {/* <DomRef /> */}
     {/* <Effect1 /> */}
-     {/* <Effect2 /> */}
-   {/* <Emotion /> 
+    {/* <Effect2 /> */}
+    {/* <Emotion /> 
     <Emotion2 />  */}
-   {/* <Index /> */}
-  {/* <Router1 /> */} 
-{/* <Router2 /> */}
-{/* <Router3 /> */}
-{/* <Router4 /> */}
-<MainRouter />
+    {/* <Index /> */}
+    {/* <Router1 /> */} 
+    {/* <Router2 /> */}
+    {/* <Router3 /> */}
+    {/* <Router4 /> */}
+    {/* <MainRouter /> */}
+  <QueryClientProvider client={queryClient}>
+      <MainRouterReactQuery />
+  </QueryClientProvider>
   </BrowserRouter>
 }
 
